@@ -1,5 +1,7 @@
 <!-- markdownlint-disable MD013 MD033 MD041 -->
 
+[![Uses TDK CLI](https://img.shields.io/badge/Uses-TDK%20CLI-blue?style=flat-square&logo=github)](https://github.com/tdk-landscape/tdk-cli-core)
+
 <p align="center">
   <img src="docs/readme-hero.svg" alt="TDK Restaurant Operations Landscape" width="100%">
 </p>
