@@ -34,6 +34,9 @@ You declare each restaurant service in a compact `service.json`. TDK discovers t
 
 ## Run It
 
+
+> **Repository-pinned CLI (optional):** Run `bun install` from the repository root to install the version pinned in `package.json`. Use `bun run tdk:project` to initialize project config, `bun run tdk:dry-run` to preview startup, or `bun run tdk:up -- <stack>` to start a stack. The global npm and standalone binary installation paths remain available.
+
 ### Prerequisites
 
 - [Docker](https://docs.docker.com/get-docker/) is running.
