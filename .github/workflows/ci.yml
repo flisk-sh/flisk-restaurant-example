@@ -49,6 +49,8 @@ jobs:
         with:
           node-version: 22
       - uses: oven-sh/setup-bun@v2
+      - name: Install example dependencies
+        run: bun install --frozen-lockfile
       - name: Install Tilt
         run: curl -fsSL https://raw.githubusercontent.com/tilt-dev/tilt/master/scripts/install.sh | bash
       - name: Free port 5432
