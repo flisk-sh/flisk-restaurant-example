@@ -33,7 +33,7 @@ jobs:
           sudo DEBIAN_FRONTEND=noninteractive apt-get remove --purge -y 'postgresql*' >/dev/null 2>&1 || true
           sudo fuser -k 5432/tcp 2>/dev/null || true
       - name: Install TDK
-        run: npm install --global @tdk-landscape/tdk-cli-core@latest
+        run: npm install --global @flisk-sh/flisk@latest
       - name: Generate project configuration
         run: tdk project --yes
       - name: Run tdk doctor
@@ -60,7 +60,7 @@ jobs:
           sudo DEBIAN_FRONTEND=noninteractive apt-get remove --purge -y 'postgresql*' >/dev/null 2>&1 || true
           sudo fuser -k 5432/tcp 2>/dev/null || true
       - name: Install TDK
-        run: npm install --global @tdk-landscape/tdk-cli-core@latest
+        run: npm install --global @flisk-sh/flisk@latest
       - name: Generate project configuration
         run: tdk project --yes
       - name: Start the example and verify real app routes
