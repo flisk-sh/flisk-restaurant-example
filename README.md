@@ -1,6 +1,6 @@
 <!-- markdownlint-disable MD013 MD033 MD041 -->
 
-[![Uses TDK CLI](https://img.shields.io/badge/Uses-TDK%20CLI-blue?style=flat-square&logo=github)](https://github.com/tdk-landscape/tdk-cli-core)
+[![Uses TDK CLI](https://img.shields.io/badge/Uses-TDK%20CLI-blue?style=flat-square&logo=github)](https://github.com/flisk-sh/flisk)
 
 <p align="center">
   <img src="docs/readme-hero.svg" alt="TDK Restaurant Operations Landscape" width="100%">
@@ -15,7 +15,7 @@
   &nbsp;&nbsp;/&nbsp;&nbsp;
   <a href="#demo-walkthrough">Demo Walkthrough</a>
   &nbsp;&nbsp;/&nbsp;&nbsp;
-  <a href="https://github.com/tdk-landscape/tdk-cli-core">TDK CLI</a>
+  <a href="https://github.com/flisk-sh/flisk">TDK CLI</a>
 </p>
 
 <br>
@@ -30,7 +30,7 @@ You declare each restaurant service in a compact `service.json`. TDK discovers t
   <img src="docs/readme-marquee.svg" alt="service.json, tdk up, reservations, kitchen, floor, Hono, Vite, Tilt, and Bun" width="100%">
 </p>
 
-> ⭐ **This project runs on [TDK CLI](https://github.com/tdk-landscape/tdk-cli-core).** If it saves you time, [star tdk-cli-core on GitHub](https://github.com/tdk-landscape/tdk-cli-core) so other developers can find it.
+> ⭐ **This project runs on [TDK CLI](https://github.com/flisk-sh/flisk).** If it saves you time, [star tdk-cli-core on GitHub](https://github.com/flisk-sh/flisk) so other developers can find it.
 
 ## Run It
 
@@ -42,10 +42,10 @@ You declare each restaurant service in a compact `service.json`. TDK discovers t
 - [Docker](https://docs.docker.com/get-docker/) is running.
 - [Tilt](https://docs.tilt.dev/install.html) is installed.
 - [Bun 1.2+](https://bun.sh/docs/installation) is installed.
-- [TDK CLI](https://github.com/tdk-landscape/tdk-cli-core#installation) is available as `tdk`.
+- [TDK CLI](https://github.com/flisk-sh/flisk#installation) is available as `tdk`.
 
 ```bash
-git clone https://github.com/tdk-landscape/tdk-restaurant-example.git
+git clone https://github.com/flisk-sh/tdk-restaurant-example.git
 cd tdk-restaurant-example
 tdk up
 ```
@@ -163,9 +163,9 @@ bun run typecheck
 </p>
 
 <p align="center">
-  <a href="https://github.com/tdk-landscape">TDK Landscape</a>
+  <a href="https://github.com/flisk-sh">TDK Landscape</a>
   &nbsp;&nbsp;/&nbsp;&nbsp;
-  <a href="https://github.com/tdk-landscape/tdk-cli-core">CLI</a>
+  <a href="https://github.com/flisk-sh/flisk">CLI</a>
   &nbsp;&nbsp;/&nbsp;&nbsp;
   <a href="DEMO_GUIDE.md">Demo Guide</a>
   &nbsp;&nbsp;/&nbsp;&nbsp;

@@ -27,7 +27,7 @@ export function App() {
     <main ref={root} className="floor-shell">
       <nav className="floor-nav">
         <strong>Floor Ops</strong>
-        <a href="https://github.com/tdk-landscape/tdk-cli-core">TDK CLI</a>
+        <a href="https://github.com/flisk-sh/flisk">TDK CLI</a>
       </nav>
       <section className="floor-hero">
         <h1>Every table, ticket, and 86 in one operating view.</h1>

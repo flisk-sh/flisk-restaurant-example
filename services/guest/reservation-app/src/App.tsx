@@ -128,7 +128,7 @@ export function App() {
           <span>service.json</span><span>tdk up guest</span><span>Hono</span><span>Vite</span><span>Bun</span><span>Tilt</span>
         </div>
         <h2>Clone it before dinner service.</h2>
-        <a href="https://github.com/tdk-landscape/tdk-cli-core" className="button button-light">Install TDK CLI</a>
+        <a href="https://github.com/flisk-sh/flisk" className="button button-light">Install TDK CLI</a>
       </section>
     </main>
   );

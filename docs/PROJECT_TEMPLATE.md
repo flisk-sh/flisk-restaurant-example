@@ -1,6 +1,6 @@
 # GitHub Project Template: TDK Landscape Delivery
 
-A GitHub Projects template for planning work on a TDK landscape. You build it once in the browser (no tokens or scripts), mark it as a template, and it then appears under **Recommended templates** whenever someone in the `tdk-landscape` organization creates a new project.
+A GitHub Projects template for planning work on a TDK landscape. You build it once in the browser (no tokens or scripts), mark it as a template, and it then appears under **Recommended templates** whenever someone in the `flisk-sh` organization creates a new project.
 
 The repository side is already in place:
 
@@ -9,7 +9,7 @@ The repository side is already in place:
 
 ## 1. Create the project
 
-1. Go to [github.com/orgs/tdk-landscape/projects](https://github.com/orgs/tdk-landscape/projects) and choose **New project**, then **Table**.
+1. Go to [github.com/orgs/flisk-sh/projects](https://github.com/orgs/flisk-sh/projects) and choose **New project**, then **Table**.
 2. Name it **TDK Landscape Delivery (template)**.
 3. Open **⋯ → Settings**.
    - Short description: *Plan and ship a TDK Project-Stack-Resource landscape: one item per resource change, tracked by stack, phase, priority, and sprint.*
@@ -57,7 +57,7 @@ Draft items are copied into every project made from the template, so a few examp
 ## 6. Make it a template
 
 1. In the project, open **⋯ → Settings** and choose **Make template**.
-2. An organization owner opens [organization settings → Projects](https://github.com/organizations/tdk-landscape/settings/projects), checks that **Enable Projects for the organization** is on, and under **Recommended templates** adds **TDK Landscape Delivery (template)**.
+2. An organization owner opens [organization settings → Projects](https://github.com/organizations/flisk-sh/settings/projects), checks that **Enable Projects for the organization** is on, and under **Recommended templates** adds **TDK Landscape Delivery (template)**.
 
 ## Labels (optional)
 

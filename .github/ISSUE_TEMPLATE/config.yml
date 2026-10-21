@@ -1,8 +1,8 @@
 blank_issues_enabled: true
 contact_links:
   - name: TDK CLI bugs and feature requests
-    url: https://github.com/tdk-landscape/tdk-cli-core/issues/new/choose
+    url: https://github.com/flisk-sh/flisk/issues/new/choose
     about: Problems with the `tdk` command itself belong in tdk-cli-core
   - name: Documentation
-    url: https://tdk-landscape.github.io/tdk-website
+    url: https://flisk.sh
     about: Guides, quickstart, and examples
