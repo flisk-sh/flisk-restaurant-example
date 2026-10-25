@@ -1,0 +1,6 @@
+// The restaurant schema lives in the migrations folder. The APIs read and write these tables with
+// Bun's SQL client, the same way the Flisk Board does, so this file only names the datasource that
+// `prisma migrate deploy` applies the migrations to. The connection string comes from prisma.config.ts.
+datasource db {
+  provider = "postgresql"
+}

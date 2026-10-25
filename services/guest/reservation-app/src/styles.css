@@ -364,3 +364,94 @@ h2 {
         flex-direction: column;
     }
 }
+.host-stand {
+    padding: 8rem max(24px, 7vw);
+    display: grid;
+    gap: 2rem;
+    background: #f7efe2;
+    color: #101413;
+}
+
+.host-intro h2 {
+    margin: 0 0 0.5rem;
+    font-size: clamp(2rem, 4vw, 3.5rem);
+}
+
+.host-intro p,
+.host-row span,
+.host-message {
+    color: rgba(16, 20, 19, 0.7);
+}
+
+.host-form {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 16px;
+    align-items: flex-end;
+}
+
+.host-form label {
+    display: grid;
+    gap: 6px;
+    font-weight: 700;
+}
+
+.host-form input,
+.host-form select,
+.host-row select {
+    min-height: 44px;
+    padding: 0 12px;
+    border: 1px solid rgba(16, 20, 19, 0.25);
+    border-radius: 8px;
+    font: inherit;
+}
+
+.host-actions {
+    display: flex;
+    gap: 12px;
+}
+
+.host-actions .button-dark {
+    color: #101413;
+    background: transparent;
+    border-color: rgba(16, 20, 19, 0.3);
+}
+
+.host-list {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    display: grid;
+    gap: 12px;
+}
+
+.host-row {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 12px 16px;
+    padding: 16px 20px;
+    border-radius: 8px;
+    background: rgba(16, 20, 19, 0.06);
+}
+
+.host-row > div {
+    flex: 1 1 220px;
+    display: grid;
+    gap: 4px;
+}
+
+.host-status {
+    font-weight: 800;
+    letter-spacing: 0.04em;
+}
+
+.host-row .button {
+    min-height: 40px;
+}
+
+.host-row .button-dark {
+    color: #101413;
+    background: transparent;
+    border-color: rgba(16, 20, 19, 0.3);
+}

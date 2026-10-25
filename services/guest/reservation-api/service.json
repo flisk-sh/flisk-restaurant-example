@@ -5,6 +5,7 @@
   "appType": "backend",
   "stack": "guest",
   "port": 4100,
-  "dependsOn": [],
+  "databaseName": "Flisk_restaurant",
+  "dependsOn": ["restaurant-migrator"],
   "healthCheckPath": "/health"
 }

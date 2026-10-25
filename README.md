@@ -74,6 +74,7 @@ tdk down
 | Stack | Resource | Type | Runtime | Port | Dependencies | Primary Capability |
 | --- | --- | --- | --- | ---: | --- | --- |
 | **guest** | [`reservation-api`](services/guest/reservation-api) | Backend API | Hono 4 / Bun | [`4100`](http://localhost:4100/health) | None | Reservations, waitlist, and table holds |
+| **guest** | [`restaurant-migrator`](services/guest/restaurant-migrator) | Migrator | Prisma migrate / Postgres | None | `postgres` | Creates and seeds the restaurant tables (`Flisk_restaurant`) |
 | **guest** | [`reservation-app`](services/guest/reservation-app) | Frontend App | Vite 5 / React | [`3100`](http://localhost:3100) | `reservation-api` | Guest booking and host stand screen |
 | **kitchen** | [`kitchen-api`](services/kitchen/kitchen-api) | Backend API | Hono 4 / Bun | [`4110`](http://localhost:4110/health) | None | Tickets, stations, and service pacing |
 | **kitchen** | [`kitchen-worker`](services/kitchen/kitchen-worker) | Background Worker | Bun Worker | [`4111`](http://localhost:4111/health) | `kitchen-api` | Ticket aging and course-fire signals |
@@ -145,6 +146,23 @@ Open [DEMO_GUIDE.md](DEMO_GUIDE.md) for a three-minute walkthrough that shows ho
 ## Plan the Work: GitHub Project Template
 
 [docs/PROJECT_TEMPLATE.md](docs/PROJECT_TEMPLATE.md) walks through building **TDK Landscape Delivery**, an organization project template, in the GitHub UI. It tracks every item by Stack, Resource, Phase, Priority, and Sprint, and matches the issue forms in `.github/ISSUE_TEMPLATE/`.
+
+## Data
+
+All four APIs share one Postgres database, `Flisk_restaurant`. `restaurant-migrator` owns the schema: it runs
+`prisma migrate deploy` over [`services/guest/restaurant-migrator/prisma/migrations`](services/guest/restaurant-migrator/prisma/migrations),
+and the APIs start only after it finishes. The first migration creates the tables; the second seeds them with fixed
+ids and `on conflict do nothing`, so re-running the migrator changes nothing.
+
+| Table | Owned by | Read and written by |
+| --- | --- | --- |
+| `menu_items` | `menu-api` | menu, 86 list, `PATCH /api/v1/menu-items/:id` |
+| `floor_tables` | `menu-api` | floor; a table's status is derived from its reservations |
+| `reservations` | `reservation-api` | bookings, waitlist, cancel, seat |
+| `kitchen_stations`, `kitchen_tickets` | `kitchen-api` | tickets and stations; seating queues a ticket, `kitchen-worker` marks queued tickets done |
+
+APIs use Bun's built-in SQL client with `DATABASE_URL` from the environment, the same pattern as the Flisk demo Board.
+Seating a party writes its kitchen ticket in the same transaction, so the pass sees it at once.
 
 ## Testing Individual Resources
 
