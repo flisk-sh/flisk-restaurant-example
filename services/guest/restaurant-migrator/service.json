@@ -1,0 +1,10 @@
+{
+  "$schema": "https://flisk.sh/schema.service.json",
+  "schemaVersion": 1,
+  "appName": "restaurant-migrator",
+  "appType": "migrator",
+  "stack": "guest",
+  "databaseName": "Flisk_restaurant",
+  "featuresEnabled": ["prisma"],
+  "dependsOn": ["postgres"]
+}

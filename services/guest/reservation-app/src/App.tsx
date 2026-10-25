@@ -2,6 +2,7 @@ import { useRef } from 'react';
 import { useGSAP } from '@gsap/react';
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
+import { HostStand } from './HostStand';
 
 gsap.registerPlugin(ScrollTrigger, useGSAP);
 
@@ -122,6 +123,8 @@ export function App() {
           ))}
         </div>
       </section>
+
+      <HostStand />
 
       <section id="book" className="cta-section">
         <div className="marquee" aria-hidden="true">

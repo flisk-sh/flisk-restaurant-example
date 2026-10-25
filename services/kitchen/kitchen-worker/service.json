@@ -5,6 +5,7 @@
   "appType": "worker",
   "stack": "kitchen",
   "port": 4111,
+  "databaseName": "Flisk_restaurant",
   "dependsOn": [
     "kitchen-api"
   ],

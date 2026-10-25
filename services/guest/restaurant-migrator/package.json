@@ -1,0 +1,15 @@
+{
+    "name": "restaurant-migrator",
+    "version": "1.0.0",
+    "private": true,
+    "type": "module",
+    "scripts": {
+        "migrate": "prisma migrate deploy"
+    },
+    "dependencies": {
+        "@prisma/client": "^7.5.0"
+    },
+    "devDependencies": {
+        "prisma": "^7.5.0"
+    }
+}
