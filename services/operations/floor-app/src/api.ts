@@ -1,10 +1,7 @@
-// The APIs the floor reads from. Vite exposes VITE_* variables at build time; the defaults match the ports in
-// service.json so the app runs against `tdk up` without configuration.
-// On a local flisk up the page is on *.localhost and the apis are on their own ports. On a live link the page is on the
-// tunnel, and each api is reached on the same origin under its service name (/menu-api, /reservation-api).
-const local = typeof location !== 'undefined' && /(^|\.)localhost$/.test(location.hostname);
-export const MENU_API_URL = import.meta.env.VITE_MENU_API_URL || (local ? 'http://localhost:4120' : '/menu-api');
-export const RESERVATION_API_URL = import.meta.env.VITE_RESERVATION_API_URL || (local ? 'http://localhost:4100' : '/reservation-api');
+// The APIs the floor reads from. Vite exposes VITE_* variables at build time.
+// Backends are only reachable through Traefik: http://api.flisk-restaurant-example.localhost/api/<name without -api>/...
+export const MENU_API_URL = import.meta.env.VITE_MENU_API_URL || 'http://api.flisk-restaurant-example.localhost/api/menu';
+export const RESERVATION_API_URL = import.meta.env.VITE_RESERVATION_API_URL || 'http://api.flisk-restaurant-example.localhost/api/reservation';
 
 export type FloorTable = {
   id: string;
