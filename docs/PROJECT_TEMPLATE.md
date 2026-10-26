@@ -1,6 +1,6 @@
-# GitHub Project Template: TDK Landscape Delivery
+# GitHub Project Template: Flisk Delivery
 
-A GitHub Projects template for planning work on a TDK landscape. You build it once in the browser (no tokens or scripts), mark it as a template, and it then appears under **Recommended templates** whenever someone in the `flisk-sh` organization creates a new project.
+A GitHub Projects template for planning work on a Flisk landscape. You build it once in the browser (no tokens or scripts), mark it as a template, and it then appears under **Recommended templates** whenever someone in the `flisk-sh` organization creates a new project.
 
 The repository side is already in place:
 
@@ -10,9 +10,9 @@ The repository side is already in place:
 ## 1. Create the project
 
 1. Go to [github.com/orgs/flisk-sh/projects](https://github.com/orgs/flisk-sh/projects) and choose **New project**, then **Table**.
-2. Name it **TDK Landscape Delivery (template)**.
+2. Name it **Flisk Delivery (template)**.
 3. Open **⋯ → Settings**.
-   - Short description: *Plan and ship a TDK Project-Stack-Resource landscape: one item per resource change, tracked by stack, phase, priority, and sprint.*
+   - Short description: *Plan and ship a Flisk Project-Stack-Resource landscape: one item per resource change, tracked by stack, phase, priority, and sprint.*
    - README: paste the contents of [`readme.md`](../.github/project-template/readme.md).
 
 ## 2. Fields
@@ -47,7 +47,7 @@ Draft items are copied into every project made from the template, so a few examp
 
 | Title | Status | Stack | Resource | Phase | Priority | Size |
 | --- | --- | --- | --- | --- | --- | --- |
-| Bring the landscape up locally with `tdk up` | Ready | platform | cross-cutting | Pre-Alpha | P0 | S |
+| Bring the landscape up locally with `flisk up` | Ready | platform | cross-cutting | Pre-Alpha | P0 | S |
 | reservation-api: persist reservations and waitlist | Backlog | guest | reservation-api | Pre-Alpha | P1 | M |
 | reservation-app: host stand table-hold screen | Backlog | guest | reservation-app | Alpha | P1 | M |
 | kitchen-worker: course-fire signal when tickets age | Backlog | kitchen | kitchen-worker | Alpha | P1 | S |
@@ -57,7 +57,7 @@ Draft items are copied into every project made from the template, so a few examp
 ## 6. Make it a template
 
 1. In the project, open **⋯ → Settings** and choose **Make template**.
-2. An organization owner opens [organization settings → Projects](https://github.com/organizations/flisk-sh/settings/projects), checks that **Enable Projects for the organization** is on, and under **Recommended templates** adds **TDK Landscape Delivery (template)**.
+2. An organization owner opens [organization settings → Projects](https://github.com/organizations/flisk-sh/settings/projects), checks that **Enable Projects for the organization** is on, and under **Recommended templates** adds **Flisk Delivery (template)**.
 
 ## Labels (optional)
 
@@ -65,7 +65,7 @@ The issue forms apply `bug`, `enhancement`, and `new-resource`. GitHub creates `
 
 ## Using the template
 
-Choose *New project → Recommended → TDK Landscape Delivery*, or open the template and choose **Use this template**. The copy gets the fields, views, draft items, and workflows. Auto-add is the one exception. Then:
+Choose *New project → Recommended → Flisk Delivery*, or open the template and choose **Use this template**. The copy gets the fields, views, draft items, and workflows. Auto-add is the one exception. Then:
 
 1. Replace the `Resource` options with the `appName` values from your own `services/*/*/service.json`.
 2. Link your repository in *Settings → Linked repositories*.

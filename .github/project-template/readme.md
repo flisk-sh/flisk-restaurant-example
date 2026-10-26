@@ -1,8 +1,8 @@
-## TDK Landscape Delivery
+## Flisk Delivery
 
-This project tracks work on a TDK **Project-Stack-Resource** landscape. It ships with [tdk-restaurant-example](https://github.com/flisk-sh/tdk-restaurant-example) as its reference repository.
+This project tracks work on a Flisk **Project-Stack-Resource** landscape. It ships with [tdk-restaurant-example](https://github.com/flisk-sh/flisk-restaurant-example) as its reference repository.
 
-Every item is one change to one resource. `Stack` and `Resource` tell you where to run it (`tdk up <stack>`). `Phase` matches the phases in `.flisk/project.json`.
+Every item is one change to one resource. `Stack` and `Resource` tell you where to run it (`flisk up <stack>`). `Phase` matches the phases in `.flisk/project.json`.
 
 ### Fields
 

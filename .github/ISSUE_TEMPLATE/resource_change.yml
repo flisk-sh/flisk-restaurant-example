@@ -36,7 +36,7 @@ body:
     attributes:
       label: Acceptance criteria
       value: |
-        - [ ] `tdk up <stack>` starts cleanly
+        - [ ] `flisk up <stack>` starts cleanly
         - [ ] `/health` stays green
         - [ ]
     validations:

@@ -28,7 +28,7 @@ body:
     attributes:
       label: Steps to reproduce
       placeholder: |
-        1. tdk up guest
+        1. flisk up guest
         2. open http://localhost:3100
         3. ...
     validations:
@@ -36,10 +36,10 @@ body:
   - type: textarea
     id: status
     attributes:
-      label: Output of `tdk status`
+      label: Output of `flisk status`
       render: shell
   - type: input
     id: version
     attributes:
-      label: TDK version
-      description: Output of `tdk --version`
+      label: Flisk version
+      description: Output of `flisk --version`

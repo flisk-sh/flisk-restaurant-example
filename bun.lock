@@ -5,7 +5,7 @@
     "": {
       "name": "tdk-restaurant-example",
       "devDependencies": {
-        "@flisk-sh/flisk": "1.3.190",
+        "@flisk-sh/flisk": "1.4.5",
       },
     },
     "services/guest/reservation-api": {
@@ -204,7 +204,7 @@
 
     "@esbuild/win32-x64": ["@esbuild/win32-x64@0.25.12", "", { "os": "win32", "cpu": "x64" }, "sha512-alJC0uCZpTFrSL0CCDjcgleBXPnCrEAhTBILpeAp7M/OFgoqtAetfBzX0xM00MUsVVPpVjlPuMbREqnZCXaTnA=="],
 
-    "@flisk-sh/flisk": ["@flisk-sh/flisk@1.3.190", "", { "dependencies": { "commander": "^15.0.0", "handlebars": "^4.7.8" }, "bin": { "tdk": "cli/bin/flisk.js", "flisk": "cli/bin/flisk.js", "tdk-cli": "cli/bin/flisk.js" } }, "sha512-z/SD1fV6a07S9z7jmDjXtiI6BcI2dIHTv4/2CQf8mXgtVq0mzRn7zogC6TTv32EFIwNepp8LbJ7mtBbUGBwIOA=="],
+    "@flisk-sh/flisk": ["@flisk-sh/flisk@1.4.5", "", { "dependencies": { "commander": "^15.0.0", "handlebars": "^4.7.8" }, "bin": { "flisk": "cli/bin/flisk.js" } }, "sha512-cDtI1zScW7+i5+jV78akGVfqrK7siB5mgwBrU919PQfHU0ubrjYQNZcK1YKXSD0Tk6Ci2MD76gG/CvhkGSIiYA=="],
 
     "@gsap/react": ["@gsap/react@2.1.2", "", { "peerDependencies": { "gsap": "^3.12.5", "react": ">=17" } }, "sha512-JqliybO1837UcgH2hVOM4VO+38APk3ECNrsuSM4MuXp+rbf+/2IG2K1YJiqfTcXQHH7XlA0m3ykniFYstfq0Iw=="],
 

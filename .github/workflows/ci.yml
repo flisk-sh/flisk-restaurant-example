@@ -10,12 +10,12 @@ permissions:
   contents: read
 
 concurrency:
-  group: tdk-ci-${{ github.workflow }}-${{ github.event.pull_request.number || github.ref }}
+  group: flisk-ci-${{ github.workflow }}-${{ github.event.pull_request.number || github.ref }}
   cancel-in-progress: true
 
 jobs:
   doctor:
-    name: 🩺 TDK doctor
+    name: 🩺 Flisk doctor
     runs-on: ubuntu-latest
     timeout-minutes: 10
     steps:
@@ -40,7 +40,7 @@ jobs:
         run: flisk doctor --no-ping
 
   e2e:
-    name: 🍽️ TDK end-to-end smoke test
+    name: 🍽️ Flisk end-to-end smoke test
     runs-on: ubuntu-latest
     timeout-minutes: 35
     steps:
