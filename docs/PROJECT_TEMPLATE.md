@@ -24,7 +24,7 @@ In **Settings → Custom fields**, edit the built-in **Status** field, then add 
 | Status | Single select (built in) | Backlog, Ready, In progress, In review, Done |
 | Stack | Single select | guest, kitchen, operations, platform |
 | Resource | Single select | reservation-api, reservation-app, kitchen-api, kitchen-worker, menu-api, floor-app, new resource, cross-cutting |
-| Phase | Single select | Pre-Alpha, Alpha, Beta, Out of Scope (the phases in [`.tdk/project.json`](../.tdk/project.json)) |
+| Phase | Single select | Pre-Alpha, Alpha, Beta, Out of Scope (the phases in [`.flisk/project.json`](../.flisk/project.json)) |
 | Priority | Single select | P0, P1, P2 |
 | Size | Single select | XS, S, M, L, XL |
 | Estimate | Number | |
