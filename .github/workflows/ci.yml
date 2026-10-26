@@ -32,12 +32,12 @@ jobs:
           sudo systemctl stop postgresql.service 'postgresql@*.service' 2>/dev/null || true
           sudo DEBIAN_FRONTEND=noninteractive apt-get remove --purge -y 'postgresql*' >/dev/null 2>&1 || true
           sudo fuser -k 5432/tcp 2>/dev/null || true
-      - name: Install TDK
+      - name: Install Flisk
         run: npm install --global @flisk-sh/flisk@latest
       - name: Generate project configuration
-        run: tdk project --yes
-      - name: Run tdk doctor
-        run: tdk doctor --no-ping
+        run: flisk project --yes
+      - name: Run flisk doctor
+        run: flisk doctor --no-ping
 
   e2e:
     name: 🍽️ TDK end-to-end smoke test
@@ -59,10 +59,10 @@ jobs:
           sudo systemctl stop postgresql.service 'postgresql@*.service' 2>/dev/null || true
           sudo DEBIAN_FRONTEND=noninteractive apt-get remove --purge -y 'postgresql*' >/dev/null 2>&1 || true
           sudo fuser -k 5432/tcp 2>/dev/null || true
-      - name: Install TDK
+      - name: Install Flisk
         run: npm install --global @flisk-sh/flisk@latest
       - name: Generate project configuration
-        run: tdk project --yes
+        run: flisk project --yes
       - name: Start the example and verify real app routes
         shell: bash
         env:
@@ -76,9 +76,9 @@ jobs:
             reservation-app|/
             floor-app|/
         run: |
-          tdk up > up.log 2>&1 &
+          flisk up > up.log 2>&1 &
           pid=$!
-          trap 'kill "$pid" 2>/dev/null || true; tdk down >/dev/null 2>&1 || true' EXIT
+          trap 'kill "$pid" 2>/dev/null || true; flisk down >/dev/null 2>&1 || true' EXIT
           for _ in $(seq 1 90); do
             grep -q 'Running tilt up' up.log && break
             if ! kill -0 "$pid" 2>/dev/null; then cat up.log; exit 1; fi
@@ -86,7 +86,7 @@ jobs:
           done
           if ! grep -q 'Running tilt up' up.log; then
             tail -100 up.log
-            echo 'tdk up did not start Tilt in 3 minutes' >&2
+            echo 'flisk up did not start Tilt in 3 minutes' >&2
             exit 1
           fi
           awk '/Starting [0-9]+ service/{found=1} /Running tilt up/{found=0} found' up.log \
@@ -95,7 +95,7 @@ jobs:
           grep -E '^https?://app\.' urls.txt > web-urls.txt || true
           if [ ! -s backend-urls.txt ]; then
             tail -100 up.log
-            echo 'tdk up did not report backend health URLs' >&2
+            echo 'flisk up did not report backend health URLs' >&2
             exit 1
           fi
           total=$(wc -l < backend-urls.txt | tr -d ' ')
