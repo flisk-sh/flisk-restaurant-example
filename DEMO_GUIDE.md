@@ -15,7 +15,7 @@ colima start
 docker info
 ```
 
-Regenerate the TDK project output after changing `.tdk/project.json`, `service.json`, or TDK CLI generation code:
+Regenerate the TDK project output after changing `.flisk/project.json`, `service.json`, or TDK CLI generation code:
 
 ```bash
 tdk project --yes
