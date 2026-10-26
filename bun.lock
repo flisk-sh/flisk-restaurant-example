@@ -3,7 +3,7 @@
   "configVersion": 1,
   "workspaces": {
     "": {
-      "name": "tdk-restaurant-example",
+      "name": "flisk-restaurant-example",
       "devDependencies": {
         "@flisk-sh/flisk": "1.4.5",
       },

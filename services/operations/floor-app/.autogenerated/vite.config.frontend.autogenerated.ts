@@ -56,17 +56,17 @@ export default defineConfig({
     },
     proxy: {
       '': {
-        target: 'http://tdk-restaurant-example.localhost/api/operations-management',
+        target: 'http://flisk-restaurant-example.localhost/api/operations-management',
         changeOrigin: true,
         secure: false,
       },
       '/health': {
-        target: 'http://tdk-restaurant-example.localhost/api/operations-management',
+        target: 'http://flisk-restaurant-example.localhost/api/operations-management',
         changeOrigin: true,
         secure: false,
       },
       '/trpc': {
-        target: 'http://tdk-restaurant-example.localhost/api/operations-management',
+        target: 'http://flisk-restaurant-example.localhost/api/operations-management',
         changeOrigin: true,
         secure: false,
       },

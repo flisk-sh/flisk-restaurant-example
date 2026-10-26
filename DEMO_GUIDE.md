@@ -42,12 +42,12 @@ Flisk discovers six resources from `service.json` manifests across the `guest`, 
 When the local HTTP bridge or Traefik proxy is running, use these URLs:
 
 ```text
-Reservation app: http://reservation-app.app.tdk-restaurant-example.localhost/
-Floor app:       http://floor-app.app.tdk-restaurant-example.localhost/
+Reservation app: http://reservation-app.app.flisk-restaurant-example.localhost/
+Floor app:       http://floor-app.app.flisk-restaurant-example.localhost/
 
-Guest API:       http://api.tdk-restaurant-example.localhost/api/guest-management
-Kitchen API:     http://api.tdk-restaurant-example.localhost/api/kitchen-management
-Operations API:  http://api.tdk-restaurant-example.localhost/api/operations-management
+Guest API:       http://api.flisk-restaurant-example.localhost/api/guest-management
+Kitchen API:     http://api.flisk-restaurant-example.localhost/api/kitchen-management
+Operations API:  http://api.flisk-restaurant-example.localhost/api/operations-management
 ```
 
 Direct service ports are:

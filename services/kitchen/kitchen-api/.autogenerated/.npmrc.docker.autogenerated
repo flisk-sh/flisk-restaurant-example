@@ -10,6 +10,6 @@
 ###############################################################################
 
 registry=https://registry.npmjs.org/
-@tdk-restaurant-example:registry=https://registry.npmjs.org/
-@tdk-landscape:registry=https://registry.npmjs.org/
+@flisk-restaurant-example:registry=https://registry.npmjs.org/
+@flisk-sh:registry=https://registry.npmjs.org/
 @identity:registry=https://registry.npmjs.org/

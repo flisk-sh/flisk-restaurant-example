@@ -53,7 +53,7 @@ export function App() {
   return (
     <main ref={root} className="page-shell">
       <nav className="nav-shell" aria-label="Restaurant example navigation">
-        <a href="#top" className="brand">TDK Restaurant</a>
+        <a href="#top" className="brand">Flisk Restaurant</a>
         <div className="nav-links">
           <a href="#guest">Guest</a>
           <a href="#kitchen">Kitchen</a>
@@ -65,7 +65,7 @@ export function App() {
       <section id="top" className="hero-section">
         <div className="hero-art" style={{ backgroundImage: `url(${images[0]})` }} />
         <div className="hero-copy">
-          <h1>Run the host stand, kitchen pass, and floor from one TDK landscape.</h1>
+          <h1>Run the host stand, kitchen pass, and floor from one Flisk landscape.</h1>
           <p>Reservations, table holds, ticket pacing, and menu availability become small resources with explicit manifests.</p>
           <div className="hero-actions">
             <a href="#book" className="button button-light">Open reservation flow</a>
@@ -77,7 +77,7 @@ export function App() {
       <section id="guest" className="bento-section">
         <div className="bento-intro">
           <h2>One dining room, six runnable resources.</h2>
-          <p>Each card maps to a manifest-driven resource that TDK can discover, generate, and run independently.</p>
+          <p>Each card maps to a manifest-driven resource that Flisk can discover, generate, and run independently.</p>
         </div>
         <div className="bento-grid">
           <article className="bento-card bento-large group-card">
@@ -131,7 +131,7 @@ export function App() {
           <span>service.json</span><span>flisk up guest</span><span>Hono</span><span>Vite</span><span>Bun</span><span>Tilt</span>
         </div>
         <h2>Clone it before dinner service.</h2>
-        <a href="https://github.com/flisk-sh/flisk" className="button button-light">Install TDK CLI</a>
+        <a href="https://github.com/flisk-sh/flisk" className="button button-light">Install Flisk CLI</a>
       </section>
     </main>
   );

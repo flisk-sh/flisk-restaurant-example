@@ -6,4 +6,4 @@
  * Base API URL for operations resource
  * Uses VITE_API_URL env var with fallback to local dev URL
  */
-export const API_URL = import.meta.env.VITE_API_URL || 'http://api.tdk-restaurant-example.localhost/api/operations-management';
+export const API_URL = import.meta.env.VITE_API_URL || 'http://api.flisk-restaurant-example.localhost/api/operations-management';

@@ -45,16 +45,16 @@ services:
         - VITE_APP_ENV=development
     labels:
         - "traefik.enable=true"
-        - 'traefik.http.routers.floor-app.rule=Host(`floor-app.localhost`) || (Host(`app.tdk-restaurant-example.localhost`) && PathPrefix(`/floor-app`)) || (Host(`localhost`) && PathPrefix(`/floor-app`))'
+        - 'traefik.http.routers.floor-app.rule=Host(`floor-app.localhost`) || (Host(`app.flisk-restaurant-example.localhost`) && PathPrefix(`/floor-app`)) || (Host(`localhost`) && PathPrefix(`/floor-app`))'
         - "traefik.http.routers.floor-app.entrypoints=web,websecure"
         - "traefik.http.routers.floor-app.priority=110"
         - "traefik.http.routers.floor-app.middlewares=floor-app-strip-prefix"
         - "traefik.http.middlewares.floor-app-strip-prefix.stripprefix.prefixes=/floor-app"
         - "traefik.http.services.floor-app.loadbalancer.server.port=80"
-        - "traefik.docker.network=tdk_restaurant_example_traefik-public"
+        - "traefik.docker.network=flisk_restaurant_example_traefik-public"
     networks:
-        - tdk_restaurant_example_traefik-public
-        - tdk_restaurant_example_backend
+        - flisk_restaurant_example_traefik-public
+        - flisk_restaurant_example_backend
     healthcheck:
       test: ["CMD", "wget", "--quiet", "--tries=1", "--spider", "http://127.0.0.1:80"]
       interval: 10s
@@ -87,10 +87,10 @@ services:
       - PORT=4120
       - INSTANCE_ID=0
       - NATS_QUEUE_GROUP=operations_backend_svc
-      - TILT_DATABASE_URL=postgresql://tdk_restaurant_example:${DB_PASSWORD}@tdk_restaurant_example_postgres:5432/tdk_restaurant_example_operations?schema=public
-      - TILT_NATS_URL=nats://tdk_restaurant_example_nats:4222
+      - TILT_DATABASE_URL=postgresql://flisk_restaurant_example:${DB_PASSWORD}@flisk_restaurant_example_postgres:5432/flisk_restaurant_example_operations?schema=public
+      - TILT_NATS_URL=nats://flisk_restaurant_example_nats:4222
       - NODE_ENV=development
-      - DATABASE_URL=postgresql://tdk_restaurant_example:${DB_PASSWORD}@tdk_restaurant_example_postgres:5432/tdk_restaurant_example_operations?schema=public
+      - DATABASE_URL=postgresql://flisk_restaurant_example:${DB_PASSWORD}@flisk_restaurant_example_postgres:5432/flisk_restaurant_example_operations?schema=public
       # Per-project escape hatch: set AUTO_MIGRATE=false in the project root .env
       # to skip Prisma auto-migration at container boot (e.g. while diagnosing a
       # migration/CLI issue) without touching the generator or any service code.
@@ -99,7 +99,7 @@ services:
       - IDENTITY_RESOURCE_URL=${IDENTITY_RESOURCE_URL:-None}
     labels:
       - "traefik.enable=true"
-      - "traefik.http.routers.menu-api.rule=Host(`operations.backend.tdk_restaurant_example.local`)"
+      - "traefik.http.routers.menu-api.rule=Host(`operations.backend.flisk_restaurant_example.local`)"
       - "traefik.http.routers.menu-api.entrypoints=web"
       - "traefik.http.routers.menu-api.service=menu-api"
 
@@ -108,16 +108,16 @@ services:
       - "traefik.http.services.menu-api.loadbalancer.healthcheck.interval=10s"
       - "traefik.http.services.menu-api.loadbalancer.healthcheck.timeout=5s"
       - "traefik.http.services.menu-api.loadbalancer.healthcheck.followredirects=false"
-      - "traefik.docker.network=tdk_restaurant_example_traefik-public"
+      - "traefik.docker.network=flisk_restaurant_example_traefik-public"
 
-      - "traefik.http.routers.menu-api-project.rule=Host(`api.tdk-restaurant-example.localhost`) && PathPrefix(`/api/menu`)"
+      - "traefik.http.routers.menu-api-project.rule=Host(`api.flisk-restaurant-example.localhost`) && PathPrefix(`/api/menu`)"
       - "traefik.http.routers.menu-api-project.entrypoints=web"
       - "traefik.http.routers.menu-api-project.service=menu-api"
       - "traefik.http.routers.menu-api-project.middlewares=menu-api-strip-prefix-project"
       - "traefik.http.middlewares.menu-api-strip-prefix-project.stripprefix.prefixes=/api/menu"
       - "traefik.http.routers.menu-api-project.priority=109"
 
-      - "traefik.http.routers.menu-api-management.rule=Host(`api.tdk-restaurant-example.localhost`) && PathPrefix(`/api/operations-management`)"
+      - "traefik.http.routers.menu-api-management.rule=Host(`api.flisk-restaurant-example.localhost`) && PathPrefix(`/api/operations-management`)"
       - "traefik.http.routers.menu-api-management.entrypoints=web"
       - "traefik.http.routers.menu-api-management.service=menu-api"
       - "traefik.http.routers.menu-api-management.middlewares=menu-api-strip-prefix-management"
@@ -130,10 +130,10 @@ services:
       - "traefik.http.middlewares.menu-api-redirect.redirectregex.permanent=true"
 
     networks:
-      - tdk_restaurant_example_traefik-public
-      - tdk_restaurant_example_backend
-      - tdk_restaurant_example_database
-      - tdk_restaurant_example_infisical-network
+      - flisk_restaurant_example_traefik-public
+      - flisk_restaurant_example_backend
+      - flisk_restaurant_example_database
+      - flisk_restaurant_example_infisical-network
     healthcheck:
       test: ["CMD", "curl", "-f", "--max-time", "5", "http://localhost:4120/health"]
       interval: 10s
@@ -153,11 +153,11 @@ services:
           memory: 256M
 
 networks:
-  tdk_restaurant_example_traefik-public:
+  flisk_restaurant_example_traefik-public:
     external: true
-  tdk_restaurant_example_backend:
+  flisk_restaurant_example_backend:
     external: true
-  tdk_restaurant_example_database:
+  flisk_restaurant_example_database:
     external: true
-  tdk_restaurant_example_infisical-network:
+  flisk_restaurant_example_infisical-network:
     external: true

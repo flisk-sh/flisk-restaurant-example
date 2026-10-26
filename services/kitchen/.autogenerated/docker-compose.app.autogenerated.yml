@@ -55,10 +55,10 @@ services:
       - PORT=4110
       - INSTANCE_ID=0
       - NATS_QUEUE_GROUP=kitchen_backend_svc
-      - TILT_DATABASE_URL=postgresql://tdk_restaurant_example:${DB_PASSWORD}@tdk_restaurant_example_postgres:5432/tdk_restaurant_example_kitchen?schema=public
-      - TILT_NATS_URL=nats://tdk_restaurant_example_nats:4222
+      - TILT_DATABASE_URL=postgresql://flisk_restaurant_example:${DB_PASSWORD}@flisk_restaurant_example_postgres:5432/flisk_restaurant_example_kitchen?schema=public
+      - TILT_NATS_URL=nats://flisk_restaurant_example_nats:4222
       - NODE_ENV=development
-      - DATABASE_URL=postgresql://tdk_restaurant_example:${DB_PASSWORD}@tdk_restaurant_example_postgres:5432/tdk_restaurant_example_kitchen?schema=public
+      - DATABASE_URL=postgresql://flisk_restaurant_example:${DB_PASSWORD}@flisk_restaurant_example_postgres:5432/flisk_restaurant_example_kitchen?schema=public
       # Per-project escape hatch: set AUTO_MIGRATE=false in the project root .env
       # to skip Prisma auto-migration at container boot (e.g. while diagnosing a
       # migration/CLI issue) without touching the generator or any service code.
@@ -67,7 +67,7 @@ services:
       - IDENTITY_RESOURCE_URL=${IDENTITY_RESOURCE_URL:-None}
     labels:
       - "traefik.enable=true"
-      - "traefik.http.routers.kitchen-api.rule=Host(`kitchen.backend.tdk_restaurant_example.local`)"
+      - "traefik.http.routers.kitchen-api.rule=Host(`kitchen.backend.flisk_restaurant_example.local`)"
       - "traefik.http.routers.kitchen-api.entrypoints=web"
       - "traefik.http.routers.kitchen-api.service=kitchen-api"
 
@@ -76,16 +76,16 @@ services:
       - "traefik.http.services.kitchen-api.loadbalancer.healthcheck.interval=10s"
       - "traefik.http.services.kitchen-api.loadbalancer.healthcheck.timeout=5s"
       - "traefik.http.services.kitchen-api.loadbalancer.healthcheck.followredirects=false"
-      - "traefik.docker.network=tdk_restaurant_example_traefik-public"
+      - "traefik.docker.network=flisk_restaurant_example_traefik-public"
 
-      - "traefik.http.routers.kitchen-api-project.rule=Host(`api.tdk-restaurant-example.localhost`) && PathPrefix(`/api/kitchen`)"
+      - "traefik.http.routers.kitchen-api-project.rule=Host(`api.flisk-restaurant-example.localhost`) && PathPrefix(`/api/kitchen`)"
       - "traefik.http.routers.kitchen-api-project.entrypoints=web"
       - "traefik.http.routers.kitchen-api-project.service=kitchen-api"
       - "traefik.http.routers.kitchen-api-project.middlewares=kitchen-api-strip-prefix-project"
       - "traefik.http.middlewares.kitchen-api-strip-prefix-project.stripprefix.prefixes=/api/kitchen"
       - "traefik.http.routers.kitchen-api-project.priority=112"
 
-      - "traefik.http.routers.kitchen-api-management.rule=Host(`api.tdk-restaurant-example.localhost`) && PathPrefix(`/api/kitchen-management`)"
+      - "traefik.http.routers.kitchen-api-management.rule=Host(`api.flisk-restaurant-example.localhost`) && PathPrefix(`/api/kitchen-management`)"
       - "traefik.http.routers.kitchen-api-management.entrypoints=web"
       - "traefik.http.routers.kitchen-api-management.service=kitchen-api"
       - "traefik.http.routers.kitchen-api-management.middlewares=kitchen-api-strip-prefix-management"
@@ -98,10 +98,10 @@ services:
       - "traefik.http.middlewares.kitchen-api-redirect.redirectregex.permanent=true"
 
     networks:
-      - tdk_restaurant_example_traefik-public
-      - tdk_restaurant_example_backend
-      - tdk_restaurant_example_database
-      - tdk_restaurant_example_infisical-network
+      - flisk_restaurant_example_traefik-public
+      - flisk_restaurant_example_backend
+      - flisk_restaurant_example_database
+      - flisk_restaurant_example_infisical-network
     healthcheck:
       test: ["CMD", "curl", "-f", "--max-time", "5", "http://localhost:4110/health"]
       interval: 10s
@@ -144,10 +144,10 @@ services:
       - PORT=4111
       - INSTANCE_ID=0
       - NATS_QUEUE_GROUP=kitchen_backend_svc
-      - TILT_DATABASE_URL=postgresql://tdk_restaurant_example:${DB_PASSWORD}@tdk_restaurant_example_postgres:5432/tdk_restaurant_example_kitchen?schema=public
-      - TILT_NATS_URL=nats://tdk_restaurant_example_nats:4222
+      - TILT_DATABASE_URL=postgresql://flisk_restaurant_example:${DB_PASSWORD}@flisk_restaurant_example_postgres:5432/flisk_restaurant_example_kitchen?schema=public
+      - TILT_NATS_URL=nats://flisk_restaurant_example_nats:4222
       - NODE_ENV=development
-      - DATABASE_URL=postgresql://tdk_restaurant_example:${DB_PASSWORD}@tdk_restaurant_example_postgres:5432/tdk_restaurant_example_kitchen?schema=public
+      - DATABASE_URL=postgresql://flisk_restaurant_example:${DB_PASSWORD}@flisk_restaurant_example_postgres:5432/flisk_restaurant_example_kitchen?schema=public
       # Per-project escape hatch: set AUTO_MIGRATE=false in the project root .env
       # to skip Prisma auto-migration at container boot (e.g. while diagnosing a
       # migration/CLI issue) without touching the generator or any service code.
@@ -157,10 +157,10 @@ services:
     labels:
       - "traefik.enable=false"
     networks:
-      - tdk_restaurant_example_traefik-public
-      - tdk_restaurant_example_backend
-      - tdk_restaurant_example_database
-      - tdk_restaurant_example_infisical-network
+      - flisk_restaurant_example_traefik-public
+      - flisk_restaurant_example_backend
+      - flisk_restaurant_example_database
+      - flisk_restaurant_example_infisical-network
     # Note: depends_on removed - Tilt manages service startup order
     deploy:
       resources:
@@ -172,11 +172,11 @@ services:
           memory: 256M
 
 networks:
-  tdk_restaurant_example_traefik-public:
+  flisk_restaurant_example_traefik-public:
     external: true
-  tdk_restaurant_example_backend:
+  flisk_restaurant_example_backend:
     external: true
-  tdk_restaurant_example_database:
+  flisk_restaurant_example_database:
     external: true
-  tdk_restaurant_example_infisical-network:
+  flisk_restaurant_example_infisical-network:
     external: true

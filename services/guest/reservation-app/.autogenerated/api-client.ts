@@ -14,7 +14,7 @@ import { createApiClient } from '@" + _NPM_SCOPE + "'/platform-api-client';
  * ```
  */
 export const apiClient = createApiClient({
-  baseURL: import.meta.env.VITE_API_URL || 'http://api.tdk-restaurant-example.localhost/api/guest-management',
+  baseURL: import.meta.env.VITE_API_URL || 'http://api.flisk-restaurant-example.localhost/api/guest-management',
   withAuth: true,
 });
 

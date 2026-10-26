@@ -56,10 +56,10 @@ services:
       - PORT=4100
       - INSTANCE_ID=0
       - NATS_QUEUE_GROUP=guest_backend_svc
-      - TILT_DATABASE_URL=postgresql://tdk_restaurant_example:${DB_PASSWORD}@tdk_restaurant_example_postgres:5432/tdk_restaurant_example_guest?schema=public
-      - TILT_NATS_URL=nats://tdk_restaurant_example_nats:4222
+      - TILT_DATABASE_URL=postgresql://flisk_restaurant_example:${DB_PASSWORD}@flisk_restaurant_example_postgres:5432/flisk_restaurant_example_guest?schema=public
+      - TILT_NATS_URL=nats://flisk_restaurant_example_nats:4222
       - NODE_ENV=development
-      - DATABASE_URL=postgresql://tdk_restaurant_example:${DB_PASSWORD}@tdk_restaurant_example_postgres:5432/tdk_restaurant_example_guest?schema=public
+      - DATABASE_URL=postgresql://flisk_restaurant_example:${DB_PASSWORD}@flisk_restaurant_example_postgres:5432/flisk_restaurant_example_guest?schema=public
       # Per-project escape hatch: set AUTO_MIGRATE=false in the project root .env
       # to skip Prisma auto-migration at container boot (e.g. while diagnosing a
       # migration/CLI issue) without touching the generator or any service code.
@@ -68,7 +68,7 @@ services:
       - IDENTITY_RESOURCE_URL=${IDENTITY_RESOURCE_URL:-None}
     labels:
       - "traefik.enable=true"
-      - "traefik.http.routers.reservation-api.rule=Host(`guest.backend.tdk_restaurant_example.local`)"
+      - "traefik.http.routers.reservation-api.rule=Host(`guest.backend.flisk_restaurant_example.local`)"
       - "traefik.http.routers.reservation-api.entrypoints=web"
       - "traefik.http.routers.reservation-api.service=reservation-api"
 
@@ -77,16 +77,16 @@ services:
       - "traefik.http.services.reservation-api.loadbalancer.healthcheck.interval=10s"
       - "traefik.http.services.reservation-api.loadbalancer.healthcheck.timeout=5s"
       - "traefik.http.services.reservation-api.loadbalancer.healthcheck.followredirects=false"
-      - "traefik.docker.network=tdk_restaurant_example_traefik-public"
+      - "traefik.docker.network=flisk_restaurant_example_traefik-public"
 
-      - "traefik.http.routers.reservation-api-project.rule=Host(`api.tdk-restaurant-example.localhost`) && PathPrefix(`/api/reservation`)"
+      - "traefik.http.routers.reservation-api-project.rule=Host(`api.flisk-restaurant-example.localhost`) && PathPrefix(`/api/reservation`)"
       - "traefik.http.routers.reservation-api-project.entrypoints=web"
       - "traefik.http.routers.reservation-api-project.service=reservation-api"
       - "traefik.http.routers.reservation-api-project.middlewares=reservation-api-strip-prefix-project"
       - "traefik.http.middlewares.reservation-api-strip-prefix-project.stripprefix.prefixes=/api/reservation"
       - "traefik.http.routers.reservation-api-project.priority=116"
 
-      - "traefik.http.routers.reservation-api-management.rule=Host(`api.tdk-restaurant-example.localhost`) && PathPrefix(`/api/guest-management`)"
+      - "traefik.http.routers.reservation-api-management.rule=Host(`api.flisk-restaurant-example.localhost`) && PathPrefix(`/api/guest-management`)"
       - "traefik.http.routers.reservation-api-management.entrypoints=web"
       - "traefik.http.routers.reservation-api-management.service=reservation-api"
       - "traefik.http.routers.reservation-api-management.middlewares=reservation-api-strip-prefix-management"
@@ -99,10 +99,10 @@ services:
       - "traefik.http.middlewares.reservation-api-redirect.redirectregex.permanent=true"
 
     networks:
-      - tdk_restaurant_example_traefik-public
-      - tdk_restaurant_example_backend
-      - tdk_restaurant_example_database
-      - tdk_restaurant_example_infisical-network
+      - flisk_restaurant_example_traefik-public
+      - flisk_restaurant_example_backend
+      - flisk_restaurant_example_database
+      - flisk_restaurant_example_infisical-network
     healthcheck:
       test: ["CMD", "curl", "-f", "--max-time", "5", "http://localhost:4100/health"]
       interval: 10s
@@ -134,16 +134,16 @@ services:
         - VITE_APP_ENV=development
     labels:
         - "traefik.enable=true"
-        - 'traefik.http.routers.reservation-app.rule=Host(`reservation-app.localhost`) || (Host(`app.tdk-restaurant-example.localhost`) && PathPrefix(`/reservation-app`)) || (Host(`localhost`) && PathPrefix(`/reservation-app`))'
+        - 'traefik.http.routers.reservation-app.rule=Host(`reservation-app.localhost`) || (Host(`app.flisk-restaurant-example.localhost`) && PathPrefix(`/reservation-app`)) || (Host(`localhost`) && PathPrefix(`/reservation-app`))'
         - "traefik.http.routers.reservation-app.entrypoints=web,websecure"
         - "traefik.http.routers.reservation-app.priority=116"
         - "traefik.http.routers.reservation-app.middlewares=reservation-app-strip-prefix"
         - "traefik.http.middlewares.reservation-app-strip-prefix.stripprefix.prefixes=/reservation-app"
         - "traefik.http.services.reservation-app.loadbalancer.server.port=80"
-        - "traefik.docker.network=tdk_restaurant_example_traefik-public"
+        - "traefik.docker.network=flisk_restaurant_example_traefik-public"
     networks:
-        - tdk_restaurant_example_traefik-public
-        - tdk_restaurant_example_backend
+        - flisk_restaurant_example_traefik-public
+        - flisk_restaurant_example_backend
     healthcheck:
       test: ["CMD", "wget", "--quiet", "--tries=1", "--spider", "http://127.0.0.1:80"]
       interval: 10s
@@ -153,11 +153,11 @@ services:
       start_period: 30s
 
 networks:
-  tdk_restaurant_example_traefik-public:
+  flisk_restaurant_example_traefik-public:
     external: true
-  tdk_restaurant_example_backend:
+  flisk_restaurant_example_backend:
     external: true
-  tdk_restaurant_example_database:
+  flisk_restaurant_example_database:
     external: true
-  tdk_restaurant_example_infisical-network:
+  flisk_restaurant_example_infisical-network:
     external: true
