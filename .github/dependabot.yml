@@ -9,6 +9,7 @@ updates:
       minor-and-patch:
         update-types: ["minor", "patch"]
     ignore:
+      - dependency-name: "@types/bun" # pinned to "latest": there is no version to bump
       - dependency-name: "*"
         update-types: ["version-update:semver-major"]
   - package-ecosystem: "bun"
@@ -20,6 +21,7 @@ updates:
       minor-and-patch:
         update-types: ["minor", "patch"]
     ignore:
+      - dependency-name: "@types/bun" # pinned to "latest": there is no version to bump
       - dependency-name: "*"
         update-types: ["version-update:semver-major"]
   - package-ecosystem: "bun"
@@ -31,6 +33,7 @@ updates:
       minor-and-patch:
         update-types: ["minor", "patch"]
     ignore:
+      - dependency-name: "@types/bun" # pinned to "latest": there is no version to bump
       - dependency-name: "*"
         update-types: ["version-update:semver-major"]
   - package-ecosystem: "bun"
@@ -42,6 +45,7 @@ updates:
       minor-and-patch:
         update-types: ["minor", "patch"]
     ignore:
+      - dependency-name: "@types/bun" # pinned to "latest": there is no version to bump
       - dependency-name: "*"
         update-types: ["version-update:semver-major"]
   - package-ecosystem: "bun"
@@ -53,6 +57,7 @@ updates:
       minor-and-patch:
         update-types: ["minor", "patch"]
     ignore:
+      - dependency-name: "@types/bun" # pinned to "latest": there is no version to bump
       - dependency-name: "*"
         update-types: ["version-update:semver-major"]
   - package-ecosystem: "bun"
@@ -64,6 +69,7 @@ updates:
       minor-and-patch:
         update-types: ["minor", "patch"]
     ignore:
+      - dependency-name: "@types/bun" # pinned to "latest": there is no version to bump
       - dependency-name: "*"
         update-types: ["version-update:semver-major"]
   - package-ecosystem: "bun"
@@ -75,5 +81,6 @@ updates:
       minor-and-patch:
         update-types: ["minor", "patch"]
     ignore:
+      - dependency-name: "@types/bun" # pinned to "latest": there is no version to bump
       - dependency-name: "*"
         update-types: ["version-update:semver-major"]
