@@ -12,7 +12,7 @@
       "name": "reservation-api",
       "version": "1.0.0",
       "dependencies": {
-        "hono": "^4.6.16",
+        "hono": "^4.13.17",
       },
       "devDependencies": {
         "@types/bun": "latest",
@@ -57,7 +57,7 @@
       "name": "kitchen-api",
       "version": "1.0.0",
       "dependencies": {
-        "hono": "^4.6.16",
+        "hono": "^4.13.17",
       },
       "devDependencies": {
         "@types/bun": "latest",
@@ -98,7 +98,7 @@
       "name": "menu-api",
       "version": "1.0.0",
       "dependencies": {
-        "hono": "^4.6.16",
+        "hono": "^4.13.17",
       },
       "devDependencies": {
         "@types/bun": "latest",
@@ -532,7 +532,7 @@
 
     "handlebars": ["handlebars@4.7.10", "", { "dependencies": { "minimist": "^1.2.8", "neo-async": "^2.6.2", "source-map": "^0.6.1", "wordwrap": "^1.0.0" }, "optionalDependencies": { "uglify-js": "^3.1.4" }, "bin": { "handlebars": "bin/handlebars" } }, "sha512-P5VJMVM7qgBn6vjXMw8WG9uVI+ncf2pi72j4de4yz5ZULLj2RGqLYaKOYGsgyrViQ0tePOVlN1tDCCXXtFqXKg=="],
 
-    "hono": ["hono@4.13.14", "", {}, "sha512-yhRLQ21U6qa9Hsu2N7Qcbh8tE+WKEcoErjIo56LeSGiGXGp9sA7UpE86Ui9uexb61KakiGwuHMn2QdV7w6i6kQ=="],
+    "hono": ["hono@4.13.17", "", {}, "sha512-vZIcbkvjOR5hHRWERbGkr8fGfF0GGM1ooYkuH448iO3b2AdVEr3AXZSw4Z3Kn+1L5z0CVoVeyV29VGYmFh05kQ=="],
 
     "iconv-lite": ["iconv-lite@0.7.3", "", { "dependencies": { "safer-buffer": ">= 2.1.2 < 3.0.0" } }, "sha512-IKXpvIzjnC9XTAUbVBcMfGS0EPaIXtW6v+zr+RRp+hqULEpo0owZax6wyRwPOJbWbzjYspQwusTsfVr0ifh4uQ=="],
 
