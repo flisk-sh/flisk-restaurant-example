@@ -12,6 +12,6 @@
     "flisk:up": "flisk up"
   },
   "devDependencies": {
-    "@flisk-sh/flisk": "1.4.5"
+    "@flisk-sh/flisk": "1.4.47"
   }
 }
