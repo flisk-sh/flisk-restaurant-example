@@ -1,0 +1,30 @@
+version: 2
+updates:
+  - package-ecosystem: "bun"
+    directory: "/"
+    schedule:
+      interval: "weekly"
+  - package-ecosystem: "bun"
+    directory: "/services/guest/reservation-api"
+    schedule:
+      interval: "weekly"
+  - package-ecosystem: "bun"
+    directory: "/services/guest/reservation-app"
+    schedule:
+      interval: "weekly"
+  - package-ecosystem: "bun"
+    directory: "/services/kitchen/kitchen-api"
+    schedule:
+      interval: "weekly"
+  - package-ecosystem: "bun"
+    directory: "/services/kitchen/kitchen-worker"
+    schedule:
+      interval: "weekly"
+  - package-ecosystem: "bun"
+    directory: "/services/operations/floor-app"
+    schedule:
+      interval: "weekly"
+  - package-ecosystem: "bun"
+    directory: "/services/operations/menu-api"
+    schedule:
+      interval: "weekly"
