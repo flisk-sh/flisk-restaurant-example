@@ -5,7 +5,7 @@
     "": {
       "name": "flisk-restaurant-example",
       "devDependencies": {
-        "@flisk-sh/flisk": "1.4.47",
+        "@flisk-sh/flisk": "1.4.57",
       },
     },
     "services/guest/reservation-api": {
@@ -210,7 +210,7 @@
 
     "@esbuild/win32-x64": ["@esbuild/win32-x64@0.25.12", "", { "os": "win32", "cpu": "x64" }, "sha512-alJC0uCZpTFrSL0CCDjcgleBXPnCrEAhTBILpeAp7M/OFgoqtAetfBzX0xM00MUsVVPpVjlPuMbREqnZCXaTnA=="],
 
-    "@flisk-sh/flisk": ["@flisk-sh/flisk@1.4.47", "", { "dependencies": { "commander": "^15.0.0" }, "bin": { "flisk": "cli/bin/flisk.js" } }, "sha512-Ge7q8Qz05YJyIYHGuXvDt6Hf6EFoK4HFUhQqnqOjmUZm+aYnxegJ51mHoLLWpbZ2l0VQt1sPCamFy7gTDjOzlg=="],
+    "@flisk-sh/flisk": ["@flisk-sh/flisk@1.4.57", "", { "dependencies": { "commander": "^15.0.0" }, "bin": { "flisk": "cli/bin/flisk.js" } }, "sha512-j0EhTLV4hWMACB+JZJZ0fCfJ5oEDSgfViyIWdvBFmWdjd6JxR0/6hDXMzNn9+SWfwrrPYQ2D+xDD215ef6ekEw=="],
 
     "@gsap/react": ["@gsap/react@2.1.2", "", { "peerDependencies": { "gsap": "^3.12.5", "react": ">=17" } }, "sha512-JqliybO1837UcgH2hVOM4VO+38APk3ECNrsuSM4MuXp+rbf+/2IG2K1YJiqfTcXQHH7XlA0m3ykniFYstfq0Iw=="],
 
