@@ -105,7 +105,7 @@ app.patch('/api/v1/tickets/:id', async (c) => {
   const [ticket] = await sql`
     update kitchen_tickets
     set status = ${status as TicketStatus},
-      done_at = case when ${status} = 'DONE' then now() else null end
+      done_at = case when ${status} = 'DONE' then coalesce(done_at, now()) else null end
     where id = ${c.req.param('id')}
     returning ${ticketColumns}`;
   return ticket ? c.json({ data: ticket }) : c.json({ error: 'not found' }, 404);
