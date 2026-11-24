@@ -1,6 +1,6 @@
 // Reservations, the waitlist and table holds, read from and written to the restaurant Postgres database.
 // The tables are created by restaurant-migrator. Seating a party also queues its first kitchen ticket.
-import { Hono } from 'hono';
+import { Hono, type HonoRequest } from 'hono';
 import { cors } from 'hono/cors';
 import { SQL } from 'bun';
 import { cleanDatabaseUrl } from './db';
@@ -48,6 +48,11 @@ const newId = (prefix: string) => `${prefix}_${crypto.randomUUID().slice(0, 8)}`
 
 type NewParty = { guestName?: unknown; partySize?: unknown; time?: unknown; tableId?: unknown };
 
+async function readParty(request: HonoRequest): Promise<NewParty | null> {
+  const body = await request.json<unknown>().catch(() => null);
+  return body !== null && typeof body === 'object' && !Array.isArray(body) ? body : null;
+}
+
 // Validate a party from a request body. Returns an error message, or null when it is usable.
 function partyError(body: NewParty): string | null {
   if (typeof body.guestName !== 'string' || !body.guestName.trim()) return 'guestName is required';
@@ -94,7 +99,8 @@ app.get('/api/v1/reservations', async (c) => {
 });
 
 app.post('/api/v1/reservations', async (c) => {
-  const body = await c.req.json<NewParty>();
+  const body = await readParty(c.req);
+  if (!body) return c.json({ error: 'expected a JSON object' }, 400);
   const error = partyError(body);
   if (error) return c.json({ error }, 400);
   const time = typeof body.time === 'string' && /^\d{2}:\d{2}$/.test(body.time) ? body.time : '19:00';
@@ -113,7 +119,8 @@ app.get('/api/v1/waitlist', async (c) => {
 });
 
 app.post('/api/v1/waitlist', async (c) => {
-  const body = await c.req.json<NewParty>();
+  const body = await readParty(c.req);
+  if (!body) return c.json({ error: 'expected a JSON object' }, 400);
   const error = partyError(body);
   if (error) return c.json({ error }, 400);
   const [row] = await sql`
